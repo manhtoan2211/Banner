@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">banner</string>
+    <string name="dialog_title">Download %s</string>
+</resources>
