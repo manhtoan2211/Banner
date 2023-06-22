@@ -17,7 +17,7 @@ import com.convert.banner.util.Utils;
 public class ViewItem extends RelativeLayout {
 
     private final ImageView im;
-    private final TextView tv;
+    private final CustomTextView tv;
     private final View vDivider;
     private BannerItem bannerItem;
 
@@ -33,7 +33,7 @@ public class ViewItem extends RelativeLayout {
         layoutParams.setMargins(i2, 0, i2, 0);
         layoutParams.addRule(15);
         addView(im, layoutParams);
-        tv = new TextView(context);
+        tv = new CustomTextView(context);
         tv.setId(124);
         tv.setSingleLine();
         tv.setEllipsize(TextUtils.TruncateAt.END);
@@ -100,6 +100,10 @@ public class ViewItem extends RelativeLayout {
 
     public void goneDivider() {
         this.vDivider.setVisibility(GONE);
+    }
+
+    public void setTextColor(int color) {
+        tv.setTextColor(color);
     }
 }
 
