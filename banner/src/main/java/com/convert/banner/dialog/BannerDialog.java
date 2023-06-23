@@ -2,6 +2,8 @@ package com.convert.banner.dialog;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,18 +22,21 @@ public class BannerDialog extends Dialog {
         super(context);
         setContentView(R.layout.banner_dialog);
         getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 
     public BannerDialog(@NonNull Context context, int themeResId) {
         super(context, themeResId);
         setContentView(R.layout.banner_dialog);
         getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 
     protected BannerDialog(@NonNull Context context, boolean cancelable, @Nullable OnCancelListener cancelListener) {
         super(context, cancelable, cancelListener);
         setContentView(R.layout.banner_dialog);
         getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+        getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 
     public void setupItems(BannerItem item) {

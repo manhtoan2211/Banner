@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">banner</string>
     <string name="dialog_title">Download %s</string>
+    <string name="dialog_description">Download to use this apps for better experience</string>
+    <string name="cancel">Cancel</string>
+    <string name="download">Download</string>
 </resources>
