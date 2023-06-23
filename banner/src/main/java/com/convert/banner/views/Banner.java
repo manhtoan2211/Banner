@@ -70,39 +70,10 @@ public class Banner extends CardView {
     }
 
     public void loaData() {
-        if (BuildConfig.DEBUG) {
-            String data = "[\n" +
-                    "            {\n" +
-                    "            \"packageName\":\"com.babydola.launcherios\",\n" +
-                    "            \"appName\":\"Launcher iOS\",\n" +
-                    "            \"appLink\":\"https://play-lh.googleusercontent.com/uRk1aOAIin5dbDPX675zqbRa4o6xAioH65hs4hKFWzC1dvPol6QdxzwzH4n1_FQHxg=s48\",\n" +
-                    "            \"bannerLink\":\"https://box.com/public/static/o48v1o1tuwyhuihl1jcndau3vcfwkidu.png\"\n" +
-                    "            },\n" +
-                    "            {\n" +
-                    "            \"packageName\":\"com.appsgenz.controlcenter.phone.ios\",\n" +
-                    "            \"appName\":\"Control Center iOS\",\n" +
-                    "            \"appLink\":\"https://play-lh.googleusercontent.com/JPtKjg5JUY8WaBW6Lw2Dk_92Of2uPbrCdaHjEs8Ru7u0y9rDK9A7Q1r-OSKfqfY3gV1J=s48\",\n" +
-                    "            \"bannerLink\":\"https://box.com/public/static/o48v1o1tuwyhuihl1jcndau3vcfwkidu.png\"\n" +
-                    "            },\n" +
-                    "            {\n" +
-                    "            \"packageName\":\"com.babydola.lockscreen\",\n" +
-                    "            \"appName\":\"Lock Screen iOS\",\n" +
-                    "            \"appLink\":\"https://play-lh.googleusercontent.com/OVq8R8n5taOR20WT9TSq10RmkOQcyDhWpKm1iyGS8ABEfHQZQUjIK9W0BrZiM6nTO6M=s48\",\n" +
-                    "            \"bannerLink\":\"https://box.com/public/static/o48v1o1tuwyhuihl1jcndau3vcfwkidu.png\"\n" +
-                    "            }\n" +
-                    "            ]";
-            ArrayList<BannerItem> items = new Gson().fromJson(data, new TypeToken<ArrayList<BannerItem>>() {
-            }.getType());
-            bindData(items);
-        } else {
-            AppConfigs.getInstance().getConfig().fetch(15).addOnCompleteListener(task -> {
-                String jsonData = AppConfigs.getInstance().getString("default_data", "");
-                ArrayList<BannerItem> items = new Gson().fromJson(jsonData, new TypeToken<ArrayList<BannerItem>>() {
-                }.getType());
-                bindData(items);
-            });
-
-        }
+        String jsonData = AppConfigs.getInstance().getString("default_data", "");
+        ArrayList<BannerItem> items = new Gson().fromJson(jsonData, new TypeToken<ArrayList<BannerItem>>() {
+        }.getType());
+        bindData(items);
     }
 
     public void changeBackground(boolean isDarkMode) {
