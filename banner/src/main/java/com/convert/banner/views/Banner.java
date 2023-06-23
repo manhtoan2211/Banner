@@ -70,7 +70,7 @@ public class Banner extends CardView {
     }
 
     public void loaData() {
-        String jsonData = AppConfigs.getInstance().getString("default_data", "");
+        String jsonData = AppConfigs.getInstance().getString("banner_data", "");
         ArrayList<BannerItem> items = new Gson().fromJson(jsonData, new TypeToken<ArrayList<BannerItem>>() {
         }.getType());
         bindData(items);
