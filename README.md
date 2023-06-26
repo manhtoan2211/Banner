@@ -12,7 +12,7 @@ allprojects {
 ~~~
 ~~~
  dependencies {
-		implementation 'com.github.User:Repo:1.0.4'
+		implementation 'com.github.manhtoan2211:Banner:1.0.4'
 	}
 ~~~
 
