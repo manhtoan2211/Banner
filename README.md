@@ -1,21 +1,24 @@
 # Banner
-BannerCustom
+Cross Setting Item
 
 #Implement
-
+~~~
 allprojects {
 		repositories {
 			...
 			maven { url 'https://jitpack.io' }
 		}
 	}
-
+~~~
+~~~
  dependencies {
 		implementation 'com.github.User:Repo:Tag'
 	}
+~~~
+#Json custom type
 
-#Json cútom type
-
+Do not change key name and value data name. Include in default json data
+~~~
 <entry>
         <key>banner_data</key>
         <value>[
@@ -40,3 +43,4 @@ allprojects {
             ]
         </value>
     </entry>
+~~~
