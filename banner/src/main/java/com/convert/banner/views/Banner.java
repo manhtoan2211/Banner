@@ -12,6 +12,7 @@ import androidx.cardview.widget.CardView;
 import com.convert.banner.BuildConfig;
 import com.convert.banner.R;
 import com.convert.banner.util.AppConfigs;
+import com.convert.banner.util.ItemCallback;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.gson.Gson;
@@ -24,6 +25,7 @@ public class Banner extends CardView {
 
     private final ArrayList<ViewItem> mList = new ArrayList<>();
     private LinearLayout mContainer;
+    private ItemCallback mItemCallback;
 
     public Banner(@NonNull Context context) {
         super(context);
@@ -49,6 +51,10 @@ public class Banner extends CardView {
         loaData();
     }
 
+    public void setItemCallback(ItemCallback callback) {
+        this.mItemCallback = callback;
+    }
+
     public void bindData(ArrayList<BannerItem> items) {
         if (items == null || items.isEmpty()) return;
         mList.clear();
@@ -56,6 +62,7 @@ public class Banner extends CardView {
         int i3 = i / 7;
         for (BannerItem temp : items) {
             ViewItem viewItem = new ViewItem(getContext());
+            viewItem.setItemCallBack(mItemCallback);
             viewItem.setBannerItem(temp);
             if (items.indexOf(temp) == 0) {
                 viewItem.setBackgroundTop();

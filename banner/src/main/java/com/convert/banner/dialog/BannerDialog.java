@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import com.bumptech.glide.Glide;
 import com.convert.banner.R;
 import com.convert.banner.models.BannerItem;
+import com.convert.banner.util.ItemCallback;
 import com.convert.banner.util.Utils;
 
 public class BannerDialog extends Dialog {
@@ -39,12 +40,19 @@ public class BannerDialog extends Dialog {
         getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     }
 
-    public void setupItems(BannerItem item) {
+    public void setupItems(BannerItem item, ItemCallback itemCallback) {
         if (item == null) return;
         ((TextView) findViewById(R.id.title)).setText(getContext().getString(R.string.dialog_title, item.appName));
         Glide.with(getContext()).load(item.bannerLink).into((ImageView) findViewById(R.id.bannerImage));
-        findViewById(R.id.continue_button).setOnClickListener(v -> Utils.openAppPackage(getContext(), item.packageName));
-        findViewById(R.id.cancel_button).setOnClickListener(v -> dismiss());
+        findViewById(R.id.continue_button).setOnClickListener(v -> {
+            Utils.openAppPackage(getContext(), item.packageName);
+            if (itemCallback != null) {
+                itemCallback.onItemClickInDialog(item.packageName);
+            }
+        });
+        findViewById(R.id.cancel_button).setOnClickListener(v -> {
+            dismiss();
+        });
         show();
     }
 }

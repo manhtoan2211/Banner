@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.convert.banner.R;
 import com.convert.banner.dialog.BannerDialog;
 import com.convert.banner.models.BannerItem;
+import com.convert.banner.util.ItemCallback;
 import com.convert.banner.util.Utils;
 
 public class ViewItem extends RelativeLayout {
@@ -20,6 +21,7 @@ public class ViewItem extends RelativeLayout {
     private final CustomTextView tv;
     private final View vDivider;
     private BannerItem bannerItem;
+    private ItemCallback mItemCallback;
 
     public ViewItem(Context context) {
         super(context);
@@ -54,6 +56,10 @@ public class ViewItem extends RelativeLayout {
         addNext();
     }
 
+    public void setItemCallBack(ItemCallback callback) {
+        this.mItemCallback = callback;
+    }
+
     public void setBannerItem(BannerItem bannerItem) {
         this.bannerItem = bannerItem;
         if (bannerItem == null
@@ -71,7 +77,10 @@ public class ViewItem extends RelativeLayout {
                     Utils.openAppPackage(getContext(), bannerItem.packageName);
                 } else {
                     BannerDialog bannerDialog = new BannerDialog(getContext());
-                    bannerDialog.setupItems(bannerItem);
+                    bannerDialog.setupItems(bannerItem, mItemCallback);
+                }
+                if (mItemCallback != null) {
+                    mItemCallback.onItemClick(bannerItem.packageName);
                 }
             }
         });
