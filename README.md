@@ -15,6 +15,43 @@ allprojects {
 		implementation 'com.github.User:Repo:Tag'
 	}
 ~~~
+
+~~~
+// case 1 add in XML
+        ((Banner) findViewById(R.id.banner)).setItemCallback(new ItemCallback() {
+            @Override
+            public void onItemClick(String packageName) {
+                Log.i("MainActivity", "onItemClick");
+                //TODO something
+            }
+
+            @Override
+            public void onItemClickInDialog(String packageName) {
+                Log.i("MainActivity", "onItemClickInDialog");
+                //TODO something
+            }
+        });
+~~~
+
+~~~
+ // case 2 add in Program
+        Banner banner = new Banner(this);
+        banner.setItemCallback(new ItemCallback() {
+            @Override
+            public void onItemClick(String packageName) {
+                Log.i("MainActivity", "onItemClick");
+                //TODO something
+            }
+
+            @Override
+            public void onItemClickInDialog(String packageName) {
+                Log.i("MainActivity", "onItemClickInDialog");
+                //TODO something
+            }
+        });
+        ((FrameLayout)findViewById(R.id.bannerContainer)).addView(banner, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+~~~
+
 #Json custom type
 
 Do not change key name and value data name. Include in default json data
