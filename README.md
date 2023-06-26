@@ -12,7 +12,7 @@ allprojects {
 ~~~
 ~~~
  dependencies {
-		implementation 'com.github.User:Repo:Tag'
+		implementation 'com.github.User:Repo:1.0.4'
 	}
 ~~~
 
