@@ -48,11 +48,11 @@ public class Banner extends CardView {
         mContainer = new LinearLayout(getContext());
         mContainer.setOrientation(LinearLayout.VERTICAL);
         addView(mContainer, LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-        loaData();
     }
 
     public void setItemCallback(ItemCallback callback) {
         this.mItemCallback = callback;
+        loaData();
     }
 
     public void bindData(ArrayList<BannerItem> items) {
