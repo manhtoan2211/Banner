@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 
 import com.convert.banner.util.ItemCallback;
 import com.convert.banner.views.Banner;
+import com.convert.banner.views.ViewItem;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // case 2 add in Program
+/*        // case 2 add in Program
         Banner banner = new Banner(this);
         banner.setItemCallback(new ItemCallback() {
             @Override
@@ -48,6 +51,6 @@ public class MainActivity extends AppCompatActivity {
                 //TODO something
             }
         });
-        ((FrameLayout)findViewById(R.id.bannerContainer)).addView(banner, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);
+        ((FrameLayout)findViewById(R.id.bannerContainer)).addView(banner, FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.WRAP_CONTENT);*/
     }
 }

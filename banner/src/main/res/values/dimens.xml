@@ -2,4 +2,8 @@
 <resources>
     <dimen name="border_layout_setting">13dp</dimen>
     <dimen name="border_button_setting">5dp</dimen>
+    <item name="icon_app_size" format="float" type="dimen">0.085</item>
+    <item name="icon_next_size" format="float" type="dimen">0.027</item>
+    <item name="text_size_app_name" format="float" type="dimen">3.8</item>
+    <item name="height_item_banner" format="float" type="dimen">0.143</item>
 </resources>

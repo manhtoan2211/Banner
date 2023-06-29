@@ -11,6 +11,10 @@
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:customIconSize="@dimen/icon_app_size"
+        app:customTextSize="@dimen/text_size_app_name"
+        app:customIconNextSize="@dimen/icon_next_size"
+        app:customHeightItem="@dimen/height_item_banner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

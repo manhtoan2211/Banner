@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="icon_app_size" format="float" type="dimen">0.055</item>
+    <item name="icon_next_size" format="float" type="dimen">0.023</item>
+    <item name="text_size_app_name" format="float" type="dimen">2.8</item>
+    <item name="height_item_banner" format="float" type="dimen">0.1</item>
+</resources>
