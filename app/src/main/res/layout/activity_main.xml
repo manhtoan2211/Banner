@@ -8,13 +8,15 @@
     tools:context=".MainActivity">
 
     <com.convert.banner.views.Banner
+        android:layout_margin="20dp"
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:customIconSize="@dimen/icon_app_size"
-        app:customTextSize="@dimen/text_size_app_name"
+        app:customTextSize="@dimen/app_name_text_size"
         app:customIconNextSize="@dimen/icon_next_size"
         app:customHeightItem="@dimen/height_item_banner"
+        app:customTextColor="#3B3B3B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

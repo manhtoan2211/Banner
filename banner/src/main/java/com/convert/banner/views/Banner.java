@@ -25,6 +25,7 @@ public class Banner extends CardView {
     private LinearLayout mContainer;
     private ItemCallback mItemCallback;
     private float mIconAppSize, mIconNextSize, mTextSize, mHeightItem;
+    private int mTextColor;
 
     public Banner(@NonNull Context context) {
         super(context);
@@ -51,9 +52,9 @@ public class Banner extends CardView {
             }
 
             if (typedArray.hasValue(R.styleable.ViewItem_customTextSize)) {
-                mTextSize = typedArray.getFloat(R.styleable.ViewItem_customTextSize, 0.038f);
+                mTextSize = typedArray.getDimensionPixelSize(R.styleable.ViewItem_customTextSize, 14);
             } else {
-                mTextSize = 0.038f;
+                mTextSize = getContext().getResources().getDimensionPixelSize(R.dimen.app_name_text_size);
             }
 
             if (typedArray.hasValue(R.styleable.ViewItem_customIconNextSize)) {
@@ -68,12 +69,20 @@ public class Banner extends CardView {
                 mHeightItem = 0.143f;
             }
 
+            if (typedArray.hasValue(R.styleable.ViewItem_customTextColor)) {
+                mTextColor = typedArray.getColor(R.styleable.ViewItem_customTextColor, Color.parseColor("#3B3B3B"));
+            } else {
+                mTextColor = Color.parseColor("#3B3B3B");
+            }
+
             typedArray.recycle();
         } else {
             mIconAppSize = 0.085f;
-            mTextSize = 0.038f;;
+            mTextSize = getContext().getResources().getDimensionPixelSize(R.dimen.app_name_text_size);
+            mHeightItem = 0.143f;
+            mTextColor = Color.parseColor("#3B3B3B");
         }
-        setCardElevation(10);
+        setCardElevation(5);
         setRadius(getResources().getDimensionPixelSize(R.dimen.border_layout_setting));
         mContainer = new LinearLayout(getContext());
         mContainer.setOrientation(LinearLayout.VERTICAL);
@@ -96,6 +105,7 @@ public class Banner extends CardView {
             viewItem.setIconSize(mIconAppSize);
             viewItem.setTextSize(mTextSize);
             viewItem.setIconNextSize(mIconNextSize);
+            viewItem.setTextColor(mTextColor);
             viewItem.setBannerItem(temp);
             if (items.indexOf(temp) == 0) {
                 viewItem.setBackgroundTop();
@@ -119,14 +129,8 @@ public class Banner extends CardView {
     public void changeBackground(boolean isDarkMode) {
         if (isDarkMode) {
             setCardBackgroundColor(Color.BLACK);
-            for (ViewItem viewItem : mList) {
-                viewItem.setTextColor(Color.WHITE);
-            }
         } else {
             setCardBackgroundColor(Color.WHITE);
-            for (ViewItem viewItem : mList) {
-                viewItem.setTextColor(Color.BLACK);
-            }
         }
     }
 }

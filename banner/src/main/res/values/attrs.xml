@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ViewItem">
-        <attr name="customTextSize" format="float" />
+        <attr name="customTextSize" format="dimension" />
         <attr name="customIconSize" format="float" />
         <attr name="customIconNextSize" format="float" />
         <attr name="customHeightItem" format="float" />
+        <attr name="customTextColor" format="color"/>
     </declare-styleable>
 </resources>

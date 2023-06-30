@@ -43,7 +43,7 @@ public class ViewItem extends RelativeLayout {
         tv.setId(124);
         tv.setSingleLine();
         tv.setEllipsize(TextUtils.TruncateAt.END);
-        tv.setTextSize(0, (mWidthScreen * mTextSize) / 100.0f);
+        tv.setTextSize(0, (mWidthScreen * 3.8f) / 100.0f);
         RelativeLayout.LayoutParams layoutParams2 = new RelativeLayout.LayoutParams(-2, -2);
         layoutParams2.addRule(15);
         layoutParams2.addRule(17, mImApp.getId());
@@ -66,7 +66,7 @@ public class ViewItem extends RelativeLayout {
     }
 
     public void setTextSize (float textSize) {
-        tv.setTextSize((mWidthScreen * textSize) / 100.0f);
+        tv.setTextSize(0, textSize);
     }
 
     public void setIconNextSize(float iconSize) {
